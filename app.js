@@ -54,13 +54,7 @@ app.use(genError);
 
 mongoose
     .connect(
-        `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_ACCESS_KEY}/${process.env.MONGO_DB}?retryWrites=true&w=majority`,
-        {
-            useNewUrlParser: true,
-            useCreateIndex: true,
-            useFindAndModify: false,
-            useUnifiedTopology: true,
-        }
+        `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_ACCESS_KEY}/${process.env.MONGO_DB}?retryWrites=true&w=majority`
     )
     .then((result) => {
         app.listen(process.env.PORT || 3000);
